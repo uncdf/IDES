@@ -1,0 +1,9 @@
+{
+  "short_name": "IDES",
+  "name": "Inclusive Digital Economy Scorecard",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000099",
+  "background_color": "#ffffff"
+}
