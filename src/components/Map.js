@@ -109,7 +109,7 @@ const Map = () =>
 		if (!isLoading || !isError)
 			currentMap = new mapboxgl.Map({
 				container: mapContainer.current,
-				style: 'mapbox://styles/cjdomacena/ckuk5zeet0rcn17lk02os9tku',
+				style: 'mapbox://styles/ezukutu/cl4323npn000h14p3yyapzo28',
 				center: [lng, lat],
 				zoom: zoom,
 				dragPan: true,
