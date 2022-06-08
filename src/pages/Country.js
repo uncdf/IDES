@@ -1,7 +1,6 @@
 
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import BarStacked from '../components/Charts/BarStacked';
 import Radar from '../components/Charts/Radar';
 import Radial from '../components/Charts/Radial';

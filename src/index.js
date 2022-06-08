@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools'
 import { BrowserRouter } from 'react-router-dom';
 import 'mapbox-gl/dist/mapbox-gl.css';
 const queryClient = new QueryClient();

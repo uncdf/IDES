@@ -54,7 +54,7 @@ const Nav = () =>
 					</div>
 				</div>
 				<ul className="hidden space-x-6 xs:hidden sm:hidden md:hidden lg:flex xl:flex">
-					<li className="hover:text-brand-100"><Link to="/">Map</Link></li>
+					<li className="hover:text-brand-100"><Link to="/" >Dashboard</Link></li>
 					<li className="relative" ref={expandRef} onMouseEnter={() => handleMouseOver()} onClick={() => handleClick()}>
 						<button className="hover:text-brand-100"  >Countries</button>
 						{isOpen ? <CountryMenu /> : ""}
