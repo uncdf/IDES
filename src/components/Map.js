@@ -497,14 +497,13 @@ const Map = () => {
             onClick={handleClick}
             value="2020"
             className={year == 2020 ? `font-bold` : ""}
-            data-tip="Data is available for 2020"
+            data-tip=""
             data-for="2020">
             2020
           </button>
           <ReactTooltip type="dark" place="top" id="2020" />
 
           <button
-            onClick={handleClick}
             value="2021"
             className={year == 2021 ? `font-bold` : ""}
             data-tip="Data will be available in 2022"
@@ -513,12 +512,12 @@ const Map = () => {
           </button>
           <ReactTooltip type="dark" place="top" id="2021" />
 
-          <button data-tip="No Data Available" data-for="2022">
+          <button data-tip="Data will be available in 2023" data-for="2022">
             2022
           </button>
           <ReactTooltip type="dark" place="top" id="2022" />
 
-          <button data-tip="No Data Available" data-for="2023">
+          <button data-tip="Data will be available in 2024" data-for="2023">
             2023
           </button>
           <ReactTooltip type="dark" place="top" id="2023" />
