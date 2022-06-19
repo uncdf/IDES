@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Country from "./pages/Country";
 import Nav from "./components/Nav";
 import Scorecard from "./pages/About/Scorecard";
-import { useMemo, useState } from "react";
+import React,{ useMemo, useState } from "react";
 import { YearContext } from './context/YearContext'
 function App()
 {

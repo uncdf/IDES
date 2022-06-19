@@ -1,5 +1,5 @@
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-import { useEffect, useState, useRef, useContext } from "react";
+import React,{ useEffect, useState, useRef, useContext } from "react";
 import { useQuery } from "react-query";
 import Tooltip from "./Tooltip";
 import ReactDOM from "react-dom";

@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import React, { useContext } from "react"
 import { YearContext } from "../context/YearContext"
 const MapLegend = ({...props}) => {
 	const {setFilter} = useContext(YearContext);

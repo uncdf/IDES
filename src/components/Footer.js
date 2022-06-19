@@ -1,8 +1,8 @@
-import { useState } from "react"
+import React,{ useState } from "react"
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 const Footer = ({show = true}) =>
 {
-	const [isShowing, setIsShowing] = useState(true);
+	const [isShowing, setIsShowing] = useState(false);
 	return (
     <footer className={`"h-auto w-full fixed p-4 bottom-0 left-0 opacity-70 bg-gray-900 p-4"`}>
       {isShowing ? (
@@ -39,7 +39,7 @@ const Footer = ({show = true}) =>
         <div className="w-automx-auto text-white text-center">
           <ul className="flex space-x-2  items-center justify-center px-2 text-sm">
             <li>
-              <copyright>© 2021 UNCDF </copyright>{" "}
+              <p>© 2021 UNCDF </p>{" "}
             </li>
             <li>|</li>
             <li className="underline">
