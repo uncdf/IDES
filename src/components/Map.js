@@ -163,7 +163,7 @@ const Map = () => {
                 source: data[i].country_name,
                 paint: {
                   "line-color": "#fff",
-                  "line-width": 0.5,
+                  "line-width": 5,
                 },
               });
 

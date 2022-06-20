@@ -1,11 +1,13 @@
-import React from "react";
+// import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router";
 import { ResponsiveSunburst } from "@nivo/sunburst";
 import Radial from "../components/Charts/Radial";
+import BarStacked from "../components/Charts/BarStacked";
+
 import Footer from "./../components/Footer";
 import Radar from "../components/Charts/Radar";
-import {FiMail} from 'react-icons/fi'
+import { FiMail } from "react-icons/fi";
 import { useTheme } from "@nivo/core";
 
 const Country = () => {
@@ -146,10 +148,9 @@ const Country = () => {
     children: [
       {
         name: "1. Policy and Regulation",
-       
+
         color: "hsl(45,100,70)",
         children: [
-
           {
             name: "1.1 Government Promotion",
             loc: get_percent(country.fields["1.1 Active Government Promotion"]),
@@ -233,52 +234,20 @@ const Country = () => {
 
   const scores = [
     {
-      column: "Digital Inclusiveness -  Disabled (%)",
-      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness - Disabled"]),
-      "Digital Divide": Math.abs(
-        get_percent(country.fields["Digital Inclusiveness - Disabled"]) - 100,
-      ),
-      name: "Disabled",
-    },
-    {
-      column: "Digital Inclusiveness -  Elderly (%)",
-      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness Score - Elderly"]),
-      "Digital Divide": Math.abs(
-        get_percent(country.fields["Digital Inclusiveness Score - Elderly"]) - 100,
-      ),
-      name: "Elderly",
-    },
-    {
-      column: "Digital Inclusiveness -  Migrants (%)",
-      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness - Migrants"]),
-      "Digital Divide": Math.abs(
-        get_percent(country.fields["Digital Inclusiveness - Migrants"]) - 100,
-      ),
-      name: "Migrants",
-    },
-    {
-      column: "Digital Inclusiveness -  MSMEs (%)",
-      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness - MSMEs"]),
-      "Digital Divide": Math.abs(
-        get_percent(country.fields["Digital Inclusiveness - MSMEs"]) - 100,
-      ),
-      name: "MSMEs",
-    },
-    {
-      column: "Digital Inclusiveness -  Refugees (%)",
-      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness  - Refugees"]),
-      "Digital Divide": Math.abs(
-        get_percent(country.fields["Digital Inclusiveness  - Refugees"]) - 100,
-      ),
-      name: "Refugees",
-    },
-    {
       column: "Digital Inclusiveness -  Rural (%)",
       "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness - Rural"]),
       "Digital Divide": Math.abs(
         get_percent(country.fields["Digital Inclusiveness - Rural"]) - 100,
       ),
       name: "Rural",
+    },
+    {
+      column: "Digital Inclusiveness -  Women (%)",
+      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness - Women"]),
+      "Digital Divide": Math.abs(
+        get_percent(country.fields["Digital Inclusiveness - Women"]) - 100,
+      ),
+      name: "Women",
     },
     {
       column: "Digital Inclusiveness -  Youth (%)",
@@ -289,47 +258,75 @@ const Country = () => {
       name: "Youth",
     },
     {
-      column: "Digital Inclusiveness -  Women (%)",
-      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness - Women"]),
+      column: "Digital Inclusiveness -  Elderly (%)",
+      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness Score - Elderly"]),
       "Digital Divide": Math.abs(
-        get_percent(country.fields["Digital Inclusiveness - Women"]) - 100,
+        get_percent(country.fields["Digital Inclusiveness Score - Elderly"]) - 100,
       ),
-      name: "Women",
+      name: "Elderly",
+    },
+    {
+      column: "Digital Inclusiveness -  Refugees (%)",
+      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness  - Refugees"]),
+      "Digital Divide": Math.abs(
+        get_percent(country.fields["Digital Inclusiveness  - Refugees"]) - 100,
+      ),
+      name: "Refugees",
+    },
+
+    {
+      column: "Digital Inclusiveness -  Migrants (%)",
+      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness - Migrants"]),
+      "Digital Divide": Math.abs(
+        get_percent(country.fields["Digital Inclusiveness - Migrants"]) - 100,
+      ),
+      name: "Migrants",
+    },
+    {
+      column: "Digital Inclusiveness -  Disabled (%)",
+      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness - Disabled"]),
+      "Digital Divide": Math.abs(
+        get_percent(country.fields["Digital Inclusiveness - Disabled"]) - 100,
+      ),
+      name: "Disabled",
+    },
+
+    {
+      column: "Digital Inclusiveness -  MSMEs (%)",
+      "Digital Inclusiveness": get_percent(country.fields["Digital Inclusiveness - MSMEs"]),
+      "Digital Divide": Math.abs(
+        get_percent(country.fields["Digital Inclusiveness - MSMEs"]) - 100,
+      ),
+      name: "MSMEs",
     },
   ];
 
   const score_keys = ["Digital Inclusiveness", "Digital Divide"];
 
-const CustomTooltip = ({ id, value, color }) => {
-  const theme = useTheme();
-  const getScore = () => {
-    switch (id) {
-      case "1. Policy and Regulation": {
-        return `${id}: ${get_percent(country.fields["Policy & Regulation"])}%`;
+  const CustomTooltip = ({ id, value, color }) => {
+    const theme = useTheme();
+    const getScore = () => {
+      switch (id) {
+        case "1. Policy and Regulation": {
+          return `${id}: ${get_percent(country.fields["Policy & Regulation"])}%`;
+        }
+        case "2. Infrastructure": {
+          return `${id}: ${get_percent(country.fields["Infrastructure"])}%`;
+        }
+        case "3. Innovation": {
+          return `${id}: ${get_percent(country.fields["Innovation"])}%`;
+        }
+        case "4. Skills": {
+          return `${id}: ${get_percent(country.fields["Skills"])}%`;
+        }
+        default: {
+          return `${id}: ${value}%`;
+        }
       }
-      case "2. Infrastructure": {
-        return `${id}: ${get_percent(country.fields["Infrastructure"])}%`;
-      }
-      case "3. Innovation": {
-        return `${id}: ${get_percent(country.fields["Innovation"])}%`;
-      }
-      case "4. Skills": {
-        return `${id}: ${get_percent(country.fields["Skills"])}%`;
-      }
-      default: {
-        return `${id}: ${value}%`;
-      }
-    }
-  }
+    };
 
-
-    return (
-        <p style={{...theme.tooltip.container }}>
-         {getScore()}
-      </p>
-    )
-}
-
+    return <p style={{ ...theme.tooltip.container }}>{getScore()}</p>;
+  };
 
   return (
     <section>
@@ -360,7 +357,7 @@ const CustomTooltip = ({ id, value, color }) => {
                 className="text-brand flex items-center w-max hover:text-gray-600 transition-colors"
                 type="email"
                 href={country.fields["Email"]}>
-                <FiMail className="w-6 h-6 mr-1"/>
+                <FiMail className="w-6 h-6 mr-1" />
                 {country.fields["Name"]}
               </a>
             </div>
@@ -403,15 +400,12 @@ const CustomTooltip = ({ id, value, color }) => {
               </p>
             </div>
           </div>
-
-          {/*
-           */}
         </div>
       </div>
 
-      {/* <div className="h-96 w-full">
+      <div className="h-auto my-12 container mx-auto p-4">
         <BarStacked data={scores} score_keys={score_keys} />
-      </div> */}
+      </div>
 
       <div className="bg-gray-900 w-full h-auto">
         <div className="xl:container lg:container w-full mx-auto grid lg:grid-cols-2 xl:grid-cols-2 grid-cols-1">
