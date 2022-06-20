@@ -30,6 +30,7 @@ const BarStacked = ({ data, score_keys }) => {
       <div className="h-96">
         <ResponsiveBar
           data={data}
+          animate={false}
           keys={score_keys}
           maxValue={100}
           layout={screenSize.dynamicWidth < 1280 ? "horizontal" : "vertical"}

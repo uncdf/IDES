@@ -67,7 +67,7 @@ const Map = () => {
       throw new Error("Something went wrong...");
     },
     {
-      staleTime: 5 * 1000, // 5 seconds
+      staleTime: 5 * 30000, // 5 seconds
       select: (data) => {
         const countries = data.map((country) => ({
           id: country.id,
@@ -152,7 +152,7 @@ const Map = () => {
                   source: data[i].country_name,
                   paint: {
                     "fill-color": getColor(data[i].country_status),
-                    "fill-opacity": 0.8,
+                    "fill-opacity": 0.7,
                   },
                 },
                 firstSymbolId,
@@ -162,8 +162,8 @@ const Map = () => {
                 type: "line",
                 source: data[i].country_name,
                 paint: {
-                  "line-color": "#fff",
-                  "line-width": 5,
+                  "line-color": "#000",
+                  "line-width": 1,
                 },
               });
 
