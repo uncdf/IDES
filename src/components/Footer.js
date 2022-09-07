@@ -13,7 +13,7 @@ const Footer = ({show = true}) =>
 			<div className="w-full h-auto">
 				<div className="w-automx-auto text-white text-center">
 					<ul className="flex space-x-2  items-center justify-center px-2 text-sm">
-						<li><copyright>© 2021 UNCDF	</copyright> </li>
+						<li><copyright>© 2022 UNCDF	</copyright> </li>
 						<li>|</li>
 						<li className="underline"><a href="https://www.uncdf.org/terms-of-use" referrerPolicy="no-referrer">Terms of Use </a></li>
 						<li>|</li>
